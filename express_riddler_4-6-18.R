@@ -14,6 +14,7 @@
 
 # Puzzle Set Up
 library(lubridate)
+library(tidyverse)
 
 ts <- seq(ymd('2001-01-01'),ymd('2099-12-31'), by = '1 day') # all days in span
 
