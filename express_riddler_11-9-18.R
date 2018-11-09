@@ -93,7 +93,7 @@ example_numbers$possible_matches <- NA
 for(i in seq_along(example_numbers$unique_digits)){
         num <- as.numeric(str_split(example_numbers$pn_string[i], pattern = "")[[1]])
         num_list <- NULL
-        for(j in 1:1000000){
+        for(j in 1:100000){
                 s <- sample(num, 7, replace = F)
                 s_c <- do.call(paste, c(as.list(s), sep = ""))
                 num_list[j] <- s_c
@@ -133,7 +133,7 @@ scales::percent(mean(probability))
 numbers <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 match <- NULL
-for(i in 1:1000000){
+for(i in 1:10000000){
         landline <- as.numeric(do.call(paste, c(as.list(sort(sample(numbers, 7, replace = T) )), sep = ""))) 
         cell <- as.numeric(do.call(paste, c(as.list(sort(sample(numbers, 7, replace = T) )), sep = "")))
         match[i] <- ifelse(landline == cell, 1, 0)
